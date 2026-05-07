@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  height: 100vh;
+}
+
+.calculator-container {
+  background: #2b2b2b;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  color: #4dd0e1;
+  font-size: 28px;
+}
+
+/* DISPLAY */
+.display {
+  background: #dcdcdc;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mask {
+  color: black;
+}
+
+.value {
+  flex: 1;
+  text-align: center;
+  letter-spacing: 8px;
+  color: black;
+}
+.predisplay {
+  color: black;
+}
+
+.cursor {
+  color: black;
+}
+
+/* KEYPAD GRID */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-auto-rows: 80px;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* BOTONES */
+.key {
+  background: #e0e0e0;
+  border: none;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.key:hover {
+  background: #d5d5d5;
+}
+
+.delete {
+  grid-row: span 2;
+  border-radius: 40px;
+}
+
+.zero {
+  grid-column: span 2;
+  border-radius: 40px;
+}
+
+/* BOTÓN SUBMIT */
+.submit {
+  grid-row: span 2;
+  background: #3b1fa6;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #2c1680;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media screen and (max-width: 1100px) {
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .calculator-container {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .remittance-panel {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .topbar {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media screen and (max-width: 768px) {
+  .title,
+  .panel-title {
+    font-size: 32px;
+  }
+
+  .display {
+    font-size: 20px;
+    padding: 12px 16px;
+  }
+
+  .value {
+    letter-spacing: 4px;
+  }
+
+  .keypad {
+    grid-template-columns: repeat(4, 65px);
+    grid-auto-rows: 65px;
+    gap: 15px;
+  }
+
+  .key,
+  .zero,
+  .submit,
+  .delete {
+    font-size: 22px;
+  }
+
+  .topbar {
+    justify-content: center;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .toolbar {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .remittance-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    padding: 20px 0;
+  }
+
+  .remittance-amount {
+    text-align: left;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+}
